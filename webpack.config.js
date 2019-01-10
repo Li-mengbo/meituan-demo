@@ -1,6 +1,6 @@
 var path = require('path')
-// var htmlWebpackPlugin = require('html-webpack-plugin');
-const VueLoaderPlugin = require('vue-loader/lib/plugin')
+var htmlWebpackPlugin = require('html-webpack-plugin');
+var VueLoaderPlugin = require('vue-loader/lib/plugin')
 var webpack = require('webpack')
 
 module.exports = {
@@ -25,15 +25,24 @@ module.exports = {
             },
             // 加载css
             {
-				test: /\.css$/,
-				loader: "style-loader!css-loader"
+                test: /\.css$/,
+                loader: "style-loader!css-loader"
+            },
+            //加载scss
+            {
+                test: /\.scss$/,
+                use: [
+                    'vue-style-loader',
+                    'css-loader',
+                    'sass-loader'
+                ]
             },
             // 加载图片
             {
                 test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
                 loader: 'url-loader',
                 options: {
-                  limit: 10000
+                    limit: 10000
                 }
             },
             // 加载字体
@@ -43,7 +52,7 @@ module.exports = {
                 options: {
                     limit: 10000
                 }
-             }
+            }
         ]
     },
     resolve: {
@@ -52,10 +61,10 @@ module.exports = {
         }
     },
     plugins: [
-    //     new htmlWebpackPlugin({
-    //         title: 'vue demo',
-    //         template: 'index.html'         
-    //    })
+        new htmlWebpackPlugin({
+            title: 'vue demo',
+            template: 'index.html'
+        }),
         new VueLoaderPlugin(),
         new webpack.HotModuleReplacementPlugin()
         // new webpack.DefinePlugin({
@@ -70,6 +79,13 @@ module.exports = {
         // })
     ],
     devServer: {
-        contentBase:"./dist"        
+        // contentBase: "./index.html",
+        noInfo: true,
+        disableHostCheck: true,
+        // historyApiFallback: {
+        //     rewrites: [
+        //         { from: /.*/, to: path.posix.join('/index.html') },
+        //     ],
+        // },
     }
 }

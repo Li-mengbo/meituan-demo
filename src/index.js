@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import './styles/index.css'
+// import './styles/index.css'
 import App from './app.vue'
 
 new Vue({
@@ -7,8 +7,3 @@ new Vue({
     template: '<App/>',
     components: { App }
 })
-
-
-
-
-
