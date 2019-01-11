@@ -1,22 +1,14 @@
 <template>
-    <div id="app">
-        <img src="./images/logo.png" alt="logo" >
-        {{msg}}
-    </div>
+  <div id="app">
+    <index/>
+  </div>
 </template>
 <script>
-    export default {
-        name:'app',
-        data(){
-            return {
-                msg: 'hello vue limegbo'
-            }
-        }
-    }
+import index from "@/pages/Index"
+export default {
+  name: "app",
+  components: {
+    index
+  }
+}
 </script>
-<style lang="scss" scoped>
-    #app {
-        color: red;
-    }
-</style>
-
