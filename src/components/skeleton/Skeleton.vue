@@ -1,15 +1,5 @@
 <template>
   <div class="container">
-    <div class="head">
-      <div class="place">
-        <router-link to="/place">北京</router-link>
-      </div>
-      <input type="text">
-      <div class="my">
-        <Icon type="ios-person-outline" class="icon"/>
-        <router-link to="/my">我的</router-link>
-      </div>
-    </div>
     <div class="nav">
       <div v-for="item in nav1" :key="item.title" class="nav-item">
         <router-link :to="item.link">
@@ -90,38 +80,6 @@ export default {
   height: 100%;
   .router-link-active {
     text-decoration: none;
-  }
-  .head {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    height: 1.02rem;
-    background: #06C1AE;
-    padding: 0 2%;
-    color: #fff;
-    a {
-      color: #fff;
-    }
-    .place {
-      font-size: .40rem;
-    }
-    input {
-      width: 70%;
-      height: .64rem;
-      outline: none;
-      border: none;
-      border-radius: .1rem;
-    }
-    .my {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      font-size: .28rem;
-      .icon {
-        font-size: .6rem;
-      }
-    }
   }
   .nav {
     display: flex;
