@@ -1,5 +1,5 @@
 var path = require("path")
-var htmlWebpackPlugin = require("html-webpack-plugin")
+var HtmlWebpackPlugin = require("html-webpack-plugin")
 var VueLoaderPlugin = require("vue-loader/lib/plugin")
 var webpack = require("webpack")
 
@@ -29,11 +29,11 @@ module.exports = {
       },
       // 加载js
       {
-        test: "/\.js$/",
+        test: /\.js$/,
         use: {
           loader: "babel-loader",
           query: {
-            presets: ["env", "stage-0", "react"] // env转换es6 stage-0转es7 react转react
+            presets: ["env"] // env转换es6
           }
         },
         exclude: /node_modules/
@@ -79,7 +79,7 @@ module.exports = {
     }
   },
   plugins: [
-    new htmlWebpackPlugin({
+    new HtmlWebpackPlugin({
       template: "index.html"
     }),
     new VueLoaderPlugin(),
