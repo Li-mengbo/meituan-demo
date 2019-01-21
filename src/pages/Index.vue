@@ -10,6 +10,8 @@
         <router-link to="/my">我的</router-link>
       </div>
     </div>
+    11111
+    <!--
     <div class="nav">
       <div v-for="item in nav1" :key="item.title" class="nav-item">
         <router-link :to="item.link">
@@ -18,6 +20,8 @@
         </router-link>
       </div>
     </div>
+    -->
+    <!--
     <div class="guess-like">
       <h3>猜你喜欢</h3>
       <div class="guess-like-content">
@@ -31,6 +35,7 @@
         </div>
       </div>
     </div>
+    -->
     <router-view/>
   </div>
 </template>
